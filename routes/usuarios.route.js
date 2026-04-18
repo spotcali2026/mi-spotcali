@@ -5,7 +5,8 @@ const {
     usuarioIdGet,
     crearUsuario,
     actualizarUsuario,
-    eliminarUsuario
+    eliminarUsuario,
+    loginUsuario // 🔥 ESTE FALTABA
 } = require('../controller/usuarios.controller');
 
 const router = Router();
