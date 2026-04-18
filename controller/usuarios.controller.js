@@ -72,14 +72,13 @@ const eliminarUsuario = async (req, res) => {
 }
 
 const loginUsuario = async (req, res) => {
-console.log('BODY:', req.body);
+
     const { correo, contrasena } = req.body;
 
     const usuario = await Usuario.findOne({
         where: { correo, contrasena }
-        
     });
-console.log('USUARIO ENCONTRADO:', usuario);
+
     if (!usuario) {
         return res.status(401).json({
             msg: "Credenciales incorrectas"
