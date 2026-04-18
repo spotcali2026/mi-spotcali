@@ -95,7 +95,7 @@ module.exports = {
     usuariosGet,
     usuarioIdGet,
     crearUsuario,
-    loginUsuario,
     actualizarUsuario,
-    eliminarUsuario
-}
+    eliminarUsuario,
+    loginUsuario // 🔥 IMPORTANTE
+};
