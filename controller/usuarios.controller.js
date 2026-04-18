@@ -71,10 +71,31 @@ const eliminarUsuario = async (req, res) => {
     });
 }
 
+const loginUsuario = async (req, res) => {
+
+    const { correo, contrasena } = req.body;
+
+    const usuario = await Usuario.findOne({
+        where: { correo, contrasena }
+    });
+
+    if (!usuario) {
+        return res.status(401).json({
+            msg: "Credenciales incorrectas"
+        });
+    }
+
+    res.json({
+        msg: "Login exitoso",
+        usuario
+    });
+};
+
 module.exports = {
     usuariosGet,
     usuarioIdGet,
     crearUsuario,
+    loginUsuario,
     actualizarUsuario,
     eliminarUsuario
 }
